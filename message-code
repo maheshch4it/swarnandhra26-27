@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class WhatsAppMessenger {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Welcome to WhatsApp Messenger!");
+        
+        System.out.print("Enter your message: ");
+        String message = scanner.nextLine();
+        
+        System.out.println("Sending message: " + message);
+        // Code to send message via WhatsApp API would go here
+    }
+}
+
