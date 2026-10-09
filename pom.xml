@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+ 
+  <modelVersion>4.0.0</modelVersion>
+ 
+  <!-- Project coordinates -->
+  <groupId>com.example</groupId>
+  <artifactId>netflix-clone</artifactId>
+  <version>1.0.0</version>
+  <packaging>war</packaging>
+  <name>Netflix Clone</name>
+  <description>Static Netflix-style website (HTML, CSS, JavaScript) packaged as a WAR</description>
+ 
+  <properties>
+    <maven.compiler.source>17</maven.compiler.source>
+    <maven.compiler.target>17</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- No web.xml needed for a static site -->
+    <failOnMissingWebXml>false</failOnMissingWebXml>
+  </properties>
+ 
+  <build>
+    <!-- Name of the generated file: target/netflix-clone.war -->
+    <finalName>netflix-clone</finalName>
+ 
+    <plugins>
+      <!-- Packages everything in src/main/webapp into a WAR file -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+        <version>3.4.0</version>
+        <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+        </configuration>
+      </plugin>
+ 
+      <!-- Optional: run the site locally with  mvn jetty:run  -->
+      <plugin>
+        <groupId>org.eclipse.jetty</groupId>
+        <artifactId>jetty-maven-plugin</artifactId>
+        <version>9.4.54.v20240208</version>
+        <configuration>
+          <webApp>
+            <contextPath>/netflix-clone</contextPath>
+          </webApp>
+          <httpConnector>
+            <port>8080</port>
+          </httpConnector>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+ 
+</project>
+
